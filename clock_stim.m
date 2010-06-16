@@ -1,4 +1,22 @@
 clear
+
+%%%% test parallel port
+direction = 'out';
+try
+    dio = digitalio('parallel', 'LPT1'); % OUTPUT
+    if strcmp(direction, 'out')
+        addline(dio, 0:7, direction);
+        putvalue(dio, 0);
+    elseif strcmp(direction, 'in')
+        addline(dio, [11,8,9,10,12], 'in')
+    end
+catch
+    dio = -1;
+    errordlg('Failed to initialise parallel port!');
+    uiwait;
+    %return;
+end
+
 try
     
     % trial settings
