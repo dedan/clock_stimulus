@@ -1,0 +1,5 @@
+
+The Data Aquisition toolbox we are using for the
+communication via parallel port is not a part of 
+Matlab anymore. We extracted it from a installation of 
+Matlab 7 R14. (stephan) 
